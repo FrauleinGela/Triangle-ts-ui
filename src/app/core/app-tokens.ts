@@ -7,4 +7,4 @@ export const INITIALIZER = [
     useFactory: validateTradeshift,
     multi: true
   }
-]
+];
