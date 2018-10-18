@@ -1,0 +1,50 @@
+<!-- TODO: Build Form's Inputs within a loop of inputs-->
+<div class="triangle-form__block">
+  <strong *ngIf="submitted && !isTriangle" class="ts-errors">the sides you've introduced don't make a triangle.</strong>
+  index {{index}}
+  <div *ngIf="!isTriangle" class="triangle-form" [formGroup]="triangleForm">
+    <div class="triangle-form__fields">
+      <fieldset class="form-block__fieldset">
+        <label for="formSideAInput" [ngClass]="{ 'ts-error': fControls.sideA.errors && (fControls.sideA.touched || submitted)}">
+          <span>Side A</span>
+          <input id="formSideAInput" formControlName="sideA" />
+        </label>
+        <dl *ngIf="fControls.sideA.errors && (fControls.sideA.touched || submitted)" class="ts-errors">
+          <dt *ngIf="fControls.sideA.errors.required">Required</dt>
+          <dd *ngIf="fControls.sideA.errors.invalidSide">Must be a digit greater than 0</dd>
+        </dl>
+      </fieldset>
+      <fieldset class="form-block__fieldset">
+        <label [ngClass]="{ 'ts-error': fControls.sideB.errors && (fControls.sideB.touched || submitted)}" for="formSideBInput">
+          <span>Side B</span>
+          <input id="formSideBInput" formControlName="sideB" />
+        </label>
+        <dl *ngIf="fControls.sideB.errors && (fControls.sideB.touched || submitted)" class="ts-errors">
+          <dt *ngIf="fControls.sideB.errors.required">Required</dt>
+          <dd *ngIf="fControls.sideB.errors.invalidSide">Must be a digit greater than 0</dd>
+        </dl>
+      </fieldset>
+      <fieldset class="form-block__fieldset">
+        <label for="formSideCInput" [ngClass]="{ 'ts-error': fControls.sideC.errors && (fControls.sideC.touched || submitted)}">
+          <span>Side C</span>
+          <input id="formSideCInput" formControlName="sideC" />
+        </label>
+        <dl *ngIf="fControls.sideC.errors && (fControls.sideC.touched || submitted)" class="ts-errors">
+          <dt *ngIf="fControls.sideC.errors.required">Required</dt>
+          <dd *ngIf="fControls.sideC.errors.invalidSide">Must be a digit greater than 0</dd>
+        </dl>
+      </fieldset>
+    </div>
+    <div class="triangle-form__tools">
+      <button data-ts="Button" (click)="deleteForm()" class="ts-danger ts-secondary">
+        <span>Remove Form</span>
+      </button>
+      <button data-ts="Button" type="submit" class="triangle-form__submit ts-primary" type="submit" (click)="validateTriangle()">
+        <span>Validate</span>
+      </button>
+    </div>
+  </div>
+  <app-triangle-detail *ngIf="isTriangle" [index]="index" [sideA]="fControls.sideA.value" [sideB]="fControls.sideB.value"
+    [sideC]="fControls.sideC.value">
+  </app-triangle-detail>
+</div>
