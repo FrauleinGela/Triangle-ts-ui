@@ -1,0 +1,18 @@
+<div class="validate-block">
+  <h1>Validate triangles</h1>
+  <form data-ts="Form" novalidate [formGroup]="triangleForms">
+    <div formArrayName="items" class="validate-triangle__block">
+      <app-triangle-form *ngFor="let item of fItemsArray.controls; let i = index" [index]="i" [submitted]="submitted"
+        [triangleForm]="item">
+      </app-triangle-form>
+    </div>
+  </form>
+  <div class="validate-block__tools">
+    <button data-ts="Button" (click)="addItem()" class="ts-secondary">
+      <span>Add</span>
+    </button>
+    <button data-ts="Button" (click)="resetAll()" class="ts-secondary">
+      <span>Reset all</span>
+    </button>
+  </div>
+</div>

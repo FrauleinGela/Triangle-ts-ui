@@ -1,0 +1,19 @@
+.validate-block {
+    padding: 10px;
+    .validate-block__tools {
+        padding: 0 10px;
+    }
+}
+
+.validate-triangle__block {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 780px) {
+    .validate-triangle__block {
+        grid-template-columns: auto;
+    }
+  }
