@@ -1,4 +1,18 @@
 # Triangle
+App that validates if the entered data(Inputs) make a triangle.
+and at the same time validates whether the triangle is equilateral, isosceles or scalene.
+
+
+## Build
+```
+npm install
+
+```
+## Run 
+```
+ng serve
+```
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
