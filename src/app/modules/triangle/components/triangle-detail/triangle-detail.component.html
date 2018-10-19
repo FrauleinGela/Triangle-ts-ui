@@ -1,0 +1,28 @@
+<div class="triangle-block ">
+  <div class="triangle-block__detail">
+    <strong> The triangle with</strong>
+    <ul class="triangle-block__list">
+      <li><strong>Side A:</strong><span>{{triangle.sideA}}</span>
+      </li>
+      <li><strong>Side B:</strong><span>{{triangle.sideB}}</span>
+      </li>
+      <li> <strong>Side C:</strong><span>{{triangle.sideC}}</span>
+      </li>
+    </ul>
+    <strong *ngIf="triangle.equalSides === 3">
+      is... equilateral
+    </strong>
+    <strong *ngIf="triangle.equalSides === 2">
+      is... isosceles
+    </strong>
+    <strong *ngIf="triangle.equalSides === 0">
+      is... scalene
+    </strong>
+  </div>
+  <div class="triangle-block__tool">
+    <button data-ts="Button" (click)="deleteBlock()" class="ts-danger ts-secondary">
+      <span>Remove Block</span>
+    </button>
+  </div>
+
+</div>
