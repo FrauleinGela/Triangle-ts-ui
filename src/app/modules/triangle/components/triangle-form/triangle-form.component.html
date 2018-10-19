@@ -1,7 +1,6 @@
 <!-- TODO: Build Form's Inputs within a loop of inputs-->
 <div class="triangle-form__block">
   <strong *ngIf="submitted && !isTriangle" class="ts-errors">the sides you've introduced don't make a triangle.</strong>
-  index {{index}}
   <div *ngIf="!isTriangle" class="triangle-form" [formGroup]="triangleForm">
     <div class="triangle-form__fields">
       <fieldset class="form-block__fieldset">
